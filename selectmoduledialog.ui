@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SelectModuleDialog</class>
+ <widget class="QDialog" name="SelectModuleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>200</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выбрать модуль</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+	font-size: 9pt;
+}
+
+QListView
+{
+	font-size: 10pt;
+}
+
+QPushButton
+{
+	background-color: rgb(218, 218, 218);
+	border: none;
+	border-radius: 6px;
+	min-width: 80px;
+	min-height: 30px;
+	font-size: 8pt;
+}
+
+QPushButton:hover
+{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 2px outset black;
+	border-bottom: 2px outset black;
+}
+
+QPushButton:pressed
+{
+	border: 2px inset black;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QListWidget" name="listUnlocatedModules">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentRow">
+      <number>1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>01-05-067</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>01-05-068</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>01-05-069</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>01-05-070</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>01-05-071</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SelectModuleDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SelectModuleDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>431</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>159</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file alias="logo">resources/logo.png</file>
+        <file alias="soundAlarm">resources/sound_alarm.wav</file>
+        <file alias="soundFail">resources/sound_fail.wav</file>
+        <file alias="scilla_logo">resources/scilla_logo.png</file>
+        <file alias="tribit_logo">resources/tribit_logo.png</file>
+    </qresource>
+</RCC>

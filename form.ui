@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainForm</class>
+ <widget class="QMainWindow" name="MainForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1525</width>
+    <height>894</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Tahoma</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Система наблюдения и контроля</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget, 
+#tabGraphPlan, #tabModules, #tabSensors, 
+#tabCameras, #tabScenarios, #tabChart,
+QDialog
+{
+	background-color: rgb(255, 255, 255);
+}
+
+QPushButton
+{
+	background-color: rgb(220, 220, 220);
+	border: none;
+	border-radius: 6px;
+	min-width: 80px;	
+	min-height: 24px;
+	font-size: 10pt;
+}
+
+QPushButton:hover
+{
+	border: solid black;
+	border-width: 1px 2px 2px 1px;
+	padding: 0px 0px 0px -1px;
+}
+
+QPushButton:pressed
+{
+	border: 2px solid black;
+	padding: 0px;
+}
+
+
+
+QTabWidget::pane 
+{
+	border: 1px solid gray;
+	top: -1px;
+ }
+
+
+QTabWidget::tab-bar
+{
+	left: 6px; 
+}
+
+QTabBar::tab 
+{
+/*
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 white, stop: 0.4 #DDDDDD,
+                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+*/
+	background: lightgray;
+    border: 1px solid gray;
+    border-bottom-color: lightgray; 
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px 20px;
+}
+
+QTabBar::tab:hover
+{
+/*
+      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 white, stop: 0.4 #f4f4f4,
+                                  stop: 0.5 #e7e7e7, stop: 1.0 white);
+*/
+	background: white;
+}
+
+QTabBar::tab:selected 
+{
+	background: white;
+    border-color: gray;
+    border-bottom-color: white;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+QTabBar::tab:!selected
+{
+    margin-top: 4px;
+	bottom: 1px;
+}
+
+QTabBar::tab:first:selected 
+{
+	margin-left: 0;
+}
+
+QTabBar::tab:last:selected 
+{
+	margin-right: 0;
+}
+
+QTabBar::tab:only-one 
+{
+	margin: 0; 
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="layoutMain">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>4</number>
+    </property>
+    <property name="topMargin">
+     <number>4</number>
+    </property>
+    <property name="rightMargin">
+     <number>4</number>
+    </property>
+    <property name="bottomMargin">
+     <number>4</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#QTabBar::tab { width: 0; height: 0; right: 1px; }</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
+      </property>
+      <widget class="GraphicPlanTabWidget" name="tabGraphPlan">
+       <attribute name="title">
+        <string>Графплан</string>
+       </attribute>
+      </widget>
+      <widget class="ModulesTabWidget" name="tabModules">
+       <attribute name="title">
+        <string>Модули</string>
+       </attribute>
+      </widget>
+      <widget class="ModuleConfigTabWidget" name="tabModuleConfigs">
+       <attribute name="title">
+        <string>Конфигурации модулей</string>
+       </attribute>
+      </widget>
+      <widget class="ChainConfigTabWidget" name="tabChainConfigs">
+       <attribute name="title">
+        <string>Конфигурации шлейфов</string>
+       </attribute>
+      </widget>
+      <widget class="CamerasTabWidget" name="tabCameras">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>Камеры</string>
+       </attribute>
+      </widget>
+      <widget class="SensorsTabWidget" name="tabSensors">
+       <attribute name="title">
+        <string>Датчики</string>
+       </attribute>
+      </widget>
+      <widget class="ScenariosTabWidget" name="tabScenarios">
+       <attribute name="title">
+        <string>Автоматика</string>
+       </attribute>
+      </widget>
+      <widget class="SensorValuesChartTabWidget" name="tabChart">
+       <attribute name="title">
+        <string>Графики</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1525</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CamerasTabWidget</class>
+   <extends>QWidget</extends>
+   <header>camerastabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SensorsTabWidget</class>
+   <extends>QWidget</extends>
+   <header>sensorstabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ModulesTabWidget</class>
+   <extends>QWidget</extends>
+   <header>modulestabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GraphicPlanTabWidget</class>
+   <extends>QWidget</extends>
+   <header>graphicplantabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ModuleConfigTabWidget</class>
+   <extends>QWidget</extends>
+   <header>moduleconfigtabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChainConfigTabWidget</class>
+   <extends>QWidget</extends>
+   <header>chainconfigtabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ScenariosTabWidget</class>
+   <extends>QWidget</extends>
+   <header>scenariostabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SensorValuesChartTabWidget</class>
+   <extends>QWidget</extends>
+   <header>sensorvaluescharttabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
